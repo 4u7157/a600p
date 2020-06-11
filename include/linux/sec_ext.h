@@ -69,6 +69,8 @@ extern void sec_initcall_debug_add(initcall_t fn, unsigned long long t);
 #ifdef CONFIG_SEC_PARAM
 #define CM_OFFSET				CONFIG_CM_OFFSET
 #define CM_OFFSET_LIMIT 8
+#define GSP_OFFSET                           0x700238
+#define GSP_OFFSET_LIMIT                     0
 enum
 {
 	PARAM_OFF = '0',
