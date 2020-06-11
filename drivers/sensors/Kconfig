@@ -403,6 +403,68 @@ config SENSORS_TC3XXK_A10E_KOR
 	  
 	  Say N here if you do not use TC3XXK for grip.
 
+config SENSORS_SX9310
+	depends on I2C
+	tristate "SX9310 driver"
+	default n
+	help
+	  Say Y here if you use sx9310.
+	  This option enables grip sensors using
+	  SemTech sx9310 device driver.
+
+	  Say N here if you do not use sx9310.
+
+config SENSORS_SX9310_INIT_TOUCH_THRESHOLD
+	int "SX9310 Grip sensor threshold for init touch"
+	depends on SENSORS_SX9310
+	default "3000"
+	help
+	  This value is the standard of init touch using
+	  SemTech sx9310 device driver.
+
+config SENSORS_SX9310_NORMAL_TOUCH_THRESHOLD
+	int "SX9310 Grip sensor threshold for normal touch"
+	depends on SENSORS_SX9310
+	default "193"
+	help
+	  This value is the standard of normal touch using
+	  SemTech sx9310 device driver.
+
+config SENSORS_SX9310_KEYSTRING_SKIPDATA
+	depends on SENSORS_SX9310
+	tristate "SX9310 Grip sensor support keystring skipdata"
+	default n
+	help
+	  This option enables support of keystring
+	  the grip sensor power skipdata.
+
+config SENSORS_SX9310_WIFI
+	depends on I2C
+	tristate "SX9310 driver"
+	default n
+	help
+	  Say Y here if you use sx9310.
+	  This option enables grip sensors using
+	  SemTech sx9310 device driver.
+
+	  Say N here if you do not use sx9310.
+
+config SENSORS_SX9310_WIFI_INIT_TOUCH_THRESHOLD
+	int "SX9310 Grip sensor threshold for init touch"
+	depends on SENSORS_SX9310_WIFI
+	default "3000"
+	help
+	  This value is the standard of init touch using
+	  SemTech sx9310 device driver.
+
+config SENSORS_SX9310_WIFI_NORMAL_TOUCH_THRESHOLD
+	int "SX9310 Grip sensor threshold for normal touch"
+	depends on SENSORS_SX9310_WIFI
+	default "17"
+	help
+	  This value is the standard of normal touch using
+	  SemTech sx9310 device driver.
+
 config SENSORS_SX9330
 	depends on I2C
 	tristate "SX9330 driver"
